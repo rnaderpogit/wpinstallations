@@ -471,8 +471,8 @@ export const formOptions = {
 export const home = {
   hero: {
     badge: site.tagline,
-    headline: "Your WordPress site should be bringing you customers. Let's fix that.",
-    sub: 'We help small businesses get found on Google, get recommended by AI tools like ChatGPT, and load fast — explained in plain English, no jargon.',
+    headline: 'Your WordPress SEO, AI, Security and Speed Optimization Services',
+    sub: 'We help WordPress websites get found on Google, get recommended by AI tools like ChatGPT, and load fast — explained in plain English, no jargon.',
     secondaryCta: { label: 'See how it works', href: '#how' },
     ticks: ['Free, no obligation', 'Report in 2 business days', 'WordPress only'],
   },

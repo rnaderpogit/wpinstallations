@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Bricolage_Grotesque, Manrope } from 'next/font/google';
+import { Ubuntu } from 'next/font/google';
 import { SiteHeader } from '@/components/layout/SiteHeader';
 import { SiteFooter } from '@/components/layout/SiteFooter';
 import { FloatingActions } from '@/components/layout/FloatingActions';
@@ -9,17 +9,17 @@ import './globals.css';
 
 // Self-hosted by next/font, so no external font origins are needed and the CSP
 // can forbid them outright.
-const display = Bricolage_Grotesque({
+const ubuntu = Ubuntu({
   subsets: ['latin'],
-  weight: ['500', '600', '700', '800'],
-  variable: '--font-display',
+  weight: ['300', '400', '500', '700'],
+  variable: '--font-sans',
   display: 'swap',
 });
 
-const sans = Manrope({
+const ubuntuDisplay = Ubuntu({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-sans',
+  weight: ['500', '700'],
+  variable: '--font-display',
   display: 'swap',
 });
 
@@ -66,7 +66,7 @@ const organizationSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable}`}>
+    <html lang="en" className={`${ubuntuDisplay.variable} ${ubuntu.variable}`}>
       <body className="pb-mobile-bar lg:pb-0">
         <script
           type="application/ld+json"

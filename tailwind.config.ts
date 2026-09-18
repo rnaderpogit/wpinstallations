@@ -50,10 +50,17 @@ const config: Config = {
         },
       },
       fontFamily: {
-        // Bricolage Grotesque: every heading and display numeral.
-        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
-        // Manrope: body copy, labels, buttons.
-        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        // Ubuntu: every heading and display numeral.
+        display: ['var(--font-display)', 'Ubuntu', 'system-ui', 'sans-serif'],
+        // Ubuntu: body copy, labels, buttons.
+        sans: ['var(--font-sans)', 'Ubuntu', 'system-ui', 'sans-serif'],
+      },
+      fontWeight: {
+        // Ubuntu ships 300/400/500/700 only. Remap the two weights the
+        // components use that Ubuntu has no face for, so 600 doesn't snap up
+        // to bold and 800 resolves to a real face.
+        semibold: '500',
+        extrabold: '700',
       },
       fontSize: {
         // Fluid scale lifted from the prototype's clamp() values.
