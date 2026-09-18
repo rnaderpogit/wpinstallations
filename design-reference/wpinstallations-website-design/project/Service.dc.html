@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Manrope:wght@400..800&display=swap" rel="stylesheet"><style>body{margin:0;background:#fff;color:#0F1B33;font-family:Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#0B3D91}a:hover{color:#072B68}*{box-sizing:border-box}</style></helmet>
+<div style="font-family:Manrope,system-ui,sans-serif;color:#0F1B33;padding-bottom:{{ padBottom }}">
+<dc-import name="SiteHeader" hint-size="100%,72px"></dc-import>
+
+<section style="background:#F6F8FB;border-bottom:1px solid #E3E8F0">
+  <div style="max-width:1160px;margin:0 auto;padding:clamp(48px,7vw,96px) 24px">
+    <a href="Services.dc.html" style="font-size:14px;font-weight:700;text-decoration:none">← All services</a>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:40px;align-items:end;margin-top:20px">
+      <div>
+        <div style="display:inline-flex;background:#EEF3FB;color:#0B3D91;font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px">{{ s.name }}</div>
+        <h1 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(36px,4.6vw,58px);line-height:1.04;letter-spacing:-.03em;margin:18px 0 0;text-wrap:balance">{{ s.headline }}</h1>
+        <p style="font-size:clamp(17px,1.3vw,19px);line-height:1.55;color:#4B5565;margin:20px 0 0;max-width:600px;text-wrap:pretty">{{ s.sub }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:30px">
+          <a href="Contact.dc.html" style="display:inline-flex;align-items:center;gap:8px;background:#0B3D91;color:#fff;font-weight:700;font-size:17px;padding:16px 24px;border-radius:12px;text-decoration:none" style-hover="background:#072B68">Get a free site audit →</a>
+          <a href="#packages" style="display:inline-flex;align-items:center;background:#fff;color:#0F1B33;font-weight:700;font-size:17px;padding:16px 24px;border-radius:12px;text-decoration:none;border:1px solid #E3E8F0" style-hover="background:#EEF3FB">See packages</a>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #E3E8F0;border-radius:20px;padding:28px">
+        <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5B6475">Sound familiar?</div>
+        <div style="display:grid;gap:14px;margin-top:16px">
+          <sc-for list="{{ s.problems }}" as="p" hint-placeholder-count="3">
+            <div style="display:flex;gap:12px;font-size:16px;line-height:1.5"><span style="flex:none;width:24px;height:24px;border-radius:50%;background:#FEE2E2;color:#B91C1C;display:grid;place-items:center;font-size:13px;font-weight:800">!</span><span>{{ p }}</span></div>
+          </sc-for>
+        </div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #E3E8F0;font-size:15px;color:#0B3D91;font-weight:700">We fix all three. Here's how ↓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:1160px;margin:0 auto;padding:clamp(56px,7vw,96px) 24px">
+  <div style="max-width:640px">
+    <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0B3D91">What we do</div>
+    <h2 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-.025em;margin:12px 0 0;text-wrap:balance">The work, in plain English.</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:20px;margin-top:40px">
+    <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+      <div style="border:1px solid #E3E8F0;border-radius:18px;padding:26px">
+        <div style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:15px;color:#0B3D91">Step {{ st.n }}</div>
+        <h3 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;font-size:21px;margin:10px 0 0;letter-spacing:-.01em">{{ st.t }}</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:#4B5565;margin:10px 0 0;text-wrap:pretty">{{ st.d }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:#0F1B33;color:#fff">
+  <div style="max-width:1160px;margin:0 auto;padding:clamp(48px,6vw,80px) 24px">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px">
+      <h2 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(28px,3.2vw,38px);line-height:1.08;letter-spacing:-.025em;margin:0">What clients typically see</h2>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8A94A6;border:1px dashed rgba(255,255,255,.3);padding:6px 10px;border-radius:8px">Sample data — replace with real results</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px;margin-top:32px">
+      <sc-for list="{{ s.outcomes }}" as="o" hint-placeholder-count="3">
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px">
+          <div style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(34px,3.6vw,46px);line-height:1;color:#4ADE80;letter-spacing:-.02em">{{ o.n }}</div>
+          <div style="font-size:15px;color:#C7D0E0;margin-top:10px;line-height:1.5">{{ o.l }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="packages" style="max-width:1160px;margin:0 auto;padding:clamp(56px,7vw,96px) 24px">
+  <div style="max-width:640px">
+    <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0B3D91">Packages</div>
+    <h2 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-.025em;margin:12px 0 0;text-wrap:balance">Two ways to work with us.</h2>
+    <p style="font-size:16px;line-height:1.6;color:#4B5565;margin:14px 0 0">Every engagement starts with the free audit. We'll recommend the package that fits — and tell you if you don't need one.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px;margin-top:40px;max-width:860px">
+    <sc-for list="{{ packages }}" as="p" hint-placeholder-count="2">
+      <div style="border:{{ p.border }};border-radius:20px;padding:30px;background:{{ p.bg }};display:flex;flex-direction:column">
+        <sc-if value="{{ p.featured }}" hint-placeholder-val="{{ false }}"><span style="display:inline-flex;align-self:flex-start;background:#0B3D91;color:#fff;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;margin-bottom:14px">Most popular</span></sc-if>
+        <h3 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:26px;margin:0;letter-spacing:-.02em">{{ p.name }}</h3>
+        <div style="font-size:15px;color:#5B6475;margin-top:6px">{{ p.who }}</div>
+        <div style="display:grid;gap:10px;margin:22px 0 0;flex:1">
+          <sc-for list="{{ p.includes }}" as="i" hint-placeholder-count="4">
+            <div style="display:flex;gap:10px;font-size:15.5px;line-height:1.5"><span style="flex:none;color:#15803D;font-weight:800">✓</span><span>{{ i }}</span></div>
+          </sc-for>
+        </div>
+        <a href="Contact.dc.html" style="display:flex;justify-content:center;margin-top:26px;background:{{ p.btnBg }};color:{{ p.btnColor }};border:1px solid #0B3D91;font-weight:700;font-size:16px;padding:14px;border-radius:12px;text-decoration:none">Start with a free audit</a>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:#F6F8FB;border-top:1px solid #E3E8F0;border-bottom:1px solid #E3E8F0">
+  <div style="max-width:1160px;margin:0 auto;padding:clamp(56px,7vw,96px) 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:40px;align-items:start">
+    <h2 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-.025em;margin:0;text-wrap:balance">Common questions about {{ s.name }}.</h2>
+    <div style="display:grid;gap:8px">
+      <sc-for list="{{ faq }}" as="f" hint-placeholder-count="3">
+        <div style="background:#fff;border:1px solid #E3E8F0;border-radius:14px;overflow:hidden">
+          <button type="button" data-i="{{ $index }}" onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;background:none;border:0;padding:18px 20px;font:inherit;font-weight:700;font-size:16.5px;color:#0F1B33;cursor:pointer;min-height:44px">{{ f.q }}<span style="flex:none;width:28px;height:28px;border-radius:50%;background:#EEF3FB;color:#0B3D91;display:grid;place-items:center;font-size:18px;line-height:1;transform:rotate({{ f.rot }});transition:transform .2s">+</span></button>
+          <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:0 20px 20px;font-size:15.5px;line-height:1.65;color:#4B5565">{{ f.a }}</p></sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:1160px;margin:0 auto;padding:clamp(56px,7vw,96px) 24px">
+  <div style="background:#0B3D91;color:#fff;border-radius:24px;padding:clamp(32px,5vw,56px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px">
+    <div style="max-width:560px">
+      <h2 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,40px);line-height:1.06;letter-spacing:-.025em;margin:0;text-wrap:balance">Not sure this is the right fix? Start with the free audit.</h2>
+      <p style="font-size:16px;line-height:1.6;color:#C7D9F7;margin:12px 0 0">We'll tell you plainly what's wrong and what we'd do about it — no obligation.</p>
+    </div>
+    <a href="Contact.dc.html" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0B3D91;font-weight:700;font-size:17px;padding:16px 26px;border-radius:12px;text-decoration:none" style-hover="background:#EEF3FB">Get a free site audit →</a>
+  </div>
+  <div style="margin-top:40px">
+    <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5B6475">Other services</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:12px">
+      <sc-for list="{{ others }}" as="o" hint-placeholder-count="2">
+        <a href="Service.dc.html?service={{ o.slug }}" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #E3E8F0;border-radius:999px;padding:10px 16px;font-weight:700;font-size:15px;text-decoration:none;color:#0F1B33" style-hover="background:#F6F8FB">{{ o.name }} →</a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;service&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;wordpress-seo&quot;,&quot;geo&quot;,&quot;speed-optimization&quot;],&quot;default&quot;:&quot;wordpress-seo&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Preview&quot;}}">
+class Component extends DCLogic {
+  state = { services: [], open: 0, w: typeof window !== 'undefined' ? window.innerWidth : 1200 };
+  componentDidMount() {
+    import('./services.js').then(m => this.setState({ services: m.services }));
+    this._r = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this._r);
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this._r); }
+  slug() {
+    if (this.props.service) return this.props.service;
+    try { const q = new URLSearchParams(location.search).get('service'); if (q) return q; } catch (e) {}
+    const h = (location.hash || '').replace('#', ''); return h || 'wordpress-seo';
+  }
+  renderVals() {
+    const list = this.state.services, slug = this.slug();
+    const s = list.find(x => x.slug === slug) || list[0] || { problems: [], steps: [], outcomes: [], packages: [], faq: [] };
+    return {
+      s,
+      steps: (s.steps || []).map((x, i) => ({ ...x, n: i + 1 })),
+      packages: (s.packages || []).map(p => ({ ...p, border: p.featured ? '2px solid #0B3D91' : '1px solid #E3E8F0', bg: p.featured ? '#F6F8FB' : '#fff', btnBg: p.featured ? '#0B3D91' : '#fff', btnColor: p.featured ? '#fff' : '#0B3D91' })),
+      faq: (s.faq || []).map((f, i) => ({ ...f, open: i === this.state.open, rot: i === this.state.open ? '45deg' : '0deg' })),
+      others: list.filter(x => x.slug !== s.slug),
+      toggleFaq: e => { const i = +e.currentTarget.dataset.i; this.setState(st => ({ open: st.open === i ? -1 : i })); },
+      padBottom: this.state.w < 900 ? '72px' : '0'
+    };
+  }
+}
+</script>
+</body>
+</html>

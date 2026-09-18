@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Manrope:wght@400..800&display=swap" rel="stylesheet"><style>body{margin:0;background:#fff;color:#0F1B33;font-family:Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#0B3D91}a:hover{color:#072B68}*{box-sizing:border-box}input:focus,select:focus,textarea:focus{outline:2px solid #0B3D91;outline-offset:1px;border-color:#0B3D91}</style></helmet>
+<div style="font-family:Manrope,system-ui,sans-serif;color:#0F1B33;padding-bottom:{{ padBottom }}">
+<dc-import name="SiteHeader" hint-size="100%,72px"></dc-import>
+<section style="max-width:1160px;margin:0 auto;padding:clamp(56px,7vw,96px) 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:48px;align-items:start">
+  <div>
+    <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0B3D91">Free site audit</div>
+    <h1 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(36px,4.6vw,56px);line-height:1.04;letter-spacing:-.03em;margin:14px 0 0;text-wrap:balance">Tell us about your site. We'll tell you what's wrong — free.</h1>
+    <p style="font-size:17px;line-height:1.6;color:#4B5565;margin:20px 0 0;text-wrap:pretty">Fill in the form and within 2 business days you'll get a plain-English report covering speed, Google visibility and AI mentions — plus what we'd do about it.</p>
+    <div style="display:grid;gap:14px;margin-top:32px">
+      <div style="display:flex;gap:12px;font-size:15.5px;line-height:1.5"><span style="flex:none;width:26px;height:26px;border-radius:50%;background:#EEF3FB;color:#0B3D91;display:grid;place-items:center;font-weight:800;font-size:13px">1</span><span>We review your site by hand — no automated PDF dump.</span></div>
+      <div style="display:flex;gap:12px;font-size:15.5px;line-height:1.5"><span style="flex:none;width:26px;height:26px;border-radius:50%;background:#EEF3FB;color:#0B3D91;display:grid;place-items:center;font-weight:800;font-size:13px">2</span><span>You get the report by email, with a short call if you want one.</span></div>
+      <div style="display:flex;gap:12px;font-size:15.5px;line-height:1.5"><span style="flex:none;width:26px;height:26px;border-radius:50%;background:#EEF3FB;color:#0B3D91;display:grid;place-items:center;font-weight:800;font-size:13px">3</span><span>If we're a fit, you get a written plan. If not, keep the report.</span></div>
+    </div>
+    <div style="margin-top:40px;padding-top:28px;border-top:1px solid #E3E8F0;display:grid;gap:10px;font-size:15.5px">
+      <div><span style="color:#5B6475">Phone</span> · <a href="tel:+12145550148" style="font-weight:700;text-decoration:none">(214) 555-0148</a></div>
+      <div><span style="color:#5B6475">Email</span> · <a href="mailto:hello@wpinstallations.com" style="font-weight:700;text-decoration:none">hello@wpinstallations.com</a></div>
+      <div><span style="color:#5B6475">Hours</span> · Mon–Fri, 9am–6pm Central</div>
+      <div><span style="color:#5B6475">Location</span> · Dallas–Fort Worth, TX · Serving the US &amp; Canada</div>
+    </div>
+  </div>
+  <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+    <form onSubmit="{{ submit }}" style="background:#F6F8FB;border:1px solid #E3E8F0;border-radius:20px;padding:clamp(20px,3vw,32px);display:grid;gap:16px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px">
+        <label style="display:grid;gap:6px;font-size:13px;font-weight:700"><span>Name *</span><input name="name" value="{{ form.name }}" onChange="{{ onField }}" required placeholder="Jane Smith" style="height:48px;border:1px solid #C7D0E0;border-radius:10px;padding:0 14px;font:inherit;font-size:16px;font-weight:500;background:#fff"></label>
+        <label style="display:grid;gap:6px;font-size:13px;font-weight:700"><span>Email *</span><input name="email" type="email" value="{{ form.email }}" onChange="{{ onField }}" required placeholder="jane@yourbusiness.com" style="height:48px;border:1px solid #C7D0E0;border-radius:10px;padding:0 14px;font:inherit;font-size:16px;font-weight:500;background:#fff"></label>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px">
+        <label style="display:grid;gap:6px;font-size:13px;font-weight:700"><span>Website address *</span><input name="url" value="{{ form.url }}" onChange="{{ onField }}" required placeholder="yourbusiness.com" style="height:48px;border:1px solid #C7D0E0;border-radius:10px;padding:0 14px;font:inherit;font-size:16px;font-weight:500;background:#fff"></label>
+        <label style="display:grid;gap:6px;font-size:13px;font-weight:700"><span>Phone</span><input name="phone" type="tel" value="{{ form.phone }}" onChange="{{ onField }}" placeholder="(214) 555-0000" style="height:48px;border:1px solid #C7D0E0;border-radius:10px;padding:0 14px;font:inherit;font-size:16px;font-weight:500;background:#fff"></label>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px">
+        <label style="display:grid;gap:6px;font-size:13px;font-weight:700"><span>Biggest problem *</span><select name="problem" value="{{ form.problem }}" onChange="{{ onField }}" required style="height:48px;border:1px solid #C7D0E0;border-radius:10px;padding:0 12px;font:inherit;font-size:16px;font-weight:500;background:#fff;color:#0F1B33"><option value="">Choose one…</option><sc-for list="{{ problems }}" as="p" hint-placeholder-count="5"><option value="{{ p }}">{{ p }}</option></sc-for></select></label>
+        <label style="display:grid;gap:6px;font-size:13px;font-weight:700"><span>Budget range</span><select name="budget" value="{{ form.budget }}" onChange="{{ onField }}" style="height:48px;border:1px solid #C7D0E0;border-radius:10px;padding:0 12px;font:inherit;font-size:16px;font-weight:500;background:#fff;color:#0F1B33"><option value="">Not sure yet</option><sc-for list="{{ budgets }}" as="b" hint-placeholder-count="4"><option value="{{ b }}">{{ b }}</option></sc-for></select></label>
+      </div>
+      <label style="display:grid;gap:6px;font-size:13px;font-weight:700"><span>Anything else we should know?</span><textarea name="message" value="{{ form.message }}" onChange="{{ onField }}" rows="4" placeholder="What's the site for, what have you tried, what would 'success' look like?" style="border:1px solid #C7D0E0;border-radius:10px;padding:12px 14px;font:inherit;font-size:16px;font-weight:500;background:#fff;resize:vertical"></textarea></label>
+      <button type="submit" style="height:54px;border:0;border-radius:12px;background:#0B3D91;color:#fff;font:inherit;font-weight:700;font-size:17px;cursor:pointer" style-hover="background:#072B68">Request my free site audit</button>
+      <span style="font-size:12.5px;color:#5B6475;text-align:center">No obligation. We never share your details.</span>
+    </form>
+  </sc-if>
+  <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+    <div style="background:#F6F8FB;border:1px solid #E3E8F0;border-radius:20px;padding:40px;text-align:center">
+      <div style="width:56px;height:56px;border-radius:50%;background:#DCFCE7;color:#15803D;display:grid;place-items:center;margin:0 auto;font-size:26px;font-weight:800">✓</div>
+      <h2 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:28px;margin:18px 0 0;letter-spacing:-.02em">Got it, {{ form.name }}.</h2>
+      <p style="font-size:16px;line-height:1.6;color:#4B5565;margin:10px 0 0;text-wrap:pretty">We're reviewing <strong>{{ form.url }}</strong>. Expect your plain-English report at <strong>{{ form.email }}</strong> within 2 business days.</p>
+      <a href="Home.dc.html" style="display:inline-flex;margin-top:22px;font-weight:700">← Back to home</a>
+    </div>
+  </sc-if>
+</section>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { problems: [], budgets: [], form: { name: '', email: '', url: '', phone: '', problem: '', budget: '', message: '' }, sent: false, w: typeof window !== 'undefined' ? window.innerWidth : 1200 };
+  componentDidMount() {
+    import('./content.js').then(m => this.setState({ problems: m.problems, budgets: m.budgets }));
+    this._r = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this._r);
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this._r); }
+  renderVals() {
+    const { form, sent } = this.state;
+    return {
+      form, sent, notSent: !sent, problems: this.state.problems, budgets: this.state.budgets,
+      onField: e => { const { name, value } = e.target; this.setState(s => ({ form: { ...s.form, [name]: value } })); },
+      submit: e => { e.preventDefault(); this.setState({ sent: true }); },
+      padBottom: this.state.w < 900 ? '72px' : '0'
+    };
+  }
+}
+</script>
+</body>
+</html>

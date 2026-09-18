@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><style>body{margin:0}</style></helmet>
+<footer style="background:#0F1B33;color:#C7D0E0;font-family:Manrope,system-ui,sans-serif">
+  <div style="max-width:1160px;margin:0 auto;padding:64px 24px 32px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px">
+      <div style="grid-column:span 1;max-width:320px">
+        <div style="display:flex;align-items:center;gap:10px;color:#fff">
+          <span style="width:30px;height:30px;border-radius:8px;background:#fff;color:#0B3D91;display:grid;place-items:center;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:16px">W</span>
+          <span style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;font-size:18px">WPInstallations</span>
+        </div>
+        <p style="margin:16px 0 0;font-size:15px;line-height:1.6">WordPress SEO, AI search (GEO) and speed optimization for small businesses across the United States and Canada. Based in Dallas–Fort Worth.</p>
+      </div>
+      <div>
+        <h4 style="margin:0 0 14px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff">Services</h4>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ services }}" as="s" hint-placeholder-count="3"><a href="Service.dc.html?service={{ s.slug }}" style="color:#C7D0E0;text-decoration:none;font-size:15px" style-hover="color:#fff">{{ s.name }}</a></sc-for>
+          <a href="Services.dc.html" style="color:#C7D0E0;text-decoration:none;font-size:15px" style-hover="color:#fff">All services</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="margin:0 0 14px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff">Company</h4>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="About.dc.html" style="color:#C7D0E0;text-decoration:none;font-size:15px" style-hover="color:#fff">About</a>
+          <a href="#blog" style="color:#C7D0E0;text-decoration:none;font-size:15px" style-hover="color:#fff">Blog</a>
+          <a href="Contact.dc.html" style="color:#C7D0E0;text-decoration:none;font-size:15px" style-hover="color:#fff">Contact</a>
+          <a href="Contact.dc.html" style="color:#C7D0E0;text-decoration:none;font-size:15px" style-hover="color:#fff">Free site audit</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="margin:0 0 14px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff">Contact</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+          <a href="tel:+12145550148" style="color:#C7D0E0;text-decoration:none" style-hover="color:#fff">(214) 555-0148</a>
+          <a href="mailto:hello@wpinstallations.com" style="color:#C7D0E0;text-decoration:none" style-hover="color:#fff">hello@wpinstallations.com</a>
+          <span>Dallas–Fort Worth, TX<br>Serving the US &amp; Canada</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;font-size:13px">
+      <span>© 2026 WPInstallations. All rights reserved.</span>
+      <div style="display:flex;gap:20px">
+        <a href="#privacy" style="color:#C7D0E0;text-decoration:none" style-hover="color:#fff">Privacy</a>
+        <a href="#terms" style="color:#C7D0E0;text-decoration:none" style-hover="color:#fff">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<sc-if value="{{ chatOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;right:20px;bottom:88px;width:300px;background:#fff;border:1px solid #E3E8F0;border-radius:16px;box-shadow:0 20px 50px rgba(15,27,51,.18);padding:20px;font-family:Manrope,system-ui,sans-serif;z-index:60">
+    <div style="font-weight:700;font-size:16px;color:#0F1B33">Have a quick question?</div>
+    <p style="margin:6px 0 14px;font-size:14px;line-height:1.5;color:#5B6475">We reply within one business day. Or skip the wait and request your free audit.</p>
+    <a href="Contact.dc.html" style="display:flex;justify-content:center;background:#0B3D91;color:#fff;font-weight:700;font-size:14px;padding:11px;border-radius:10px;text-decoration:none">Send a message</a>
+  </div>
+</sc-if>
+<button type="button" onClick="{{ toggleChat }}" aria-label="Chat" style="position:fixed;right:20px;bottom:{{ chatBottom }};width:56px;height:56px;border-radius:50%;border:0;background:#0B3D91;color:#fff;box-shadow:0 10px 30px rgba(11,61,145,.35);display:grid;place-items:center;cursor:pointer;z-index:60"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6a3 3 0 013-3h10a3 3 0 013 3v7a3 3 0 01-3 3H10l-5 4v-4a3 3 0 01-1-2.2V6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
+<sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid #E3E8F0;display:flex;gap:10px;z-index:55;font-family:Manrope,system-ui,sans-serif">
+    <a href="tel:+12145550148" style="flex:none;width:52px;height:50px;border:1px solid #E3E8F0;border-radius:12px;display:grid;place-items:center;color:#0F1B33;text-decoration:none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+    <a href="Contact.dc.html" style="flex:1;display:flex;align-items:center;justify-content:center;background:#0B3D91;color:#fff;font-weight:700;font-size:16px;height:50px;border-radius:12px;text-decoration:none;margin-right:66px">Get a free site audit</a>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { services: [], chatOpen: false, w: typeof window !== 'undefined' ? window.innerWidth : 1200 };
+  componentDidMount() {
+    import('./services.js').then(m => this.setState({ services: m.services }));
+    this._r = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this._r);
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this._r); }
+  renderVals() {
+    const mobile = this.state.w < 900;
+    return { services: this.state.services, mobile, chatOpen: this.state.chatOpen, chatBottom: mobile ? '84px' : '20px', toggleChat: () => this.setState(s => ({ chatOpen: !s.chatOpen })) };
+  }
+}
+</script>
+</body>
+</html>

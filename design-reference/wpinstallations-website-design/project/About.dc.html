@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Manrope:wght@400..800&display=swap" rel="stylesheet"><style>body{margin:0;background:#fff;color:#0F1B33;font-family:Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#0B3D91}a:hover{color:#072B68}*{box-sizing:border-box}</style></helmet>
+<div style="font-family:Manrope,system-ui,sans-serif;color:#0F1B33;padding-bottom:{{ padBottom }}">
+<dc-import name="SiteHeader" hint-size="100%,72px"></dc-import>
+<section style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vw,104px) 24px">
+  <div style="max-width:760px">
+    <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0B3D91">About WPInstallations</div>
+    <h1 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(38px,5vw,60px);line-height:1.02;letter-spacing:-.03em;margin:14px 0 0;text-wrap:balance">We fix the WordPress sites that business owners gave up on.</h1>
+    <p style="font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:#4B5565;margin:20px 0 0;text-wrap:pretty">Most small-business websites were built once, then left alone. They got slower, Google stopped paying attention, and now AI tools recommend someone else. We exist to reverse that — and to explain every step in language you'd use with a customer.</p>
+  </div>
+</section>
+<section style="background:#F6F8FB;border-top:1px solid #E3E8F0;border-bottom:1px solid #E3E8F0">
+  <div style="max-width:1160px;margin:0 auto;padding:clamp(56px,7vw,96px) 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px">
+    <div style="background:#fff;border:1px solid #E3E8F0;border-radius:18px;padding:28px"><h3 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;font-size:22px;margin:0;letter-spacing:-.01em">WordPress. Only WordPress.</h3><p style="font-size:15.5px;line-height:1.6;color:#4B5565;margin:10px 0 0">Over 40% of the web runs on it. Specializing means we've seen your problem before and already know the fix.</p></div>
+    <div style="background:#fff;border:1px solid #E3E8F0;border-radius:18px;padding:28px"><h3 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;font-size:22px;margin:0;letter-spacing:-.01em">Plain English, always.</h3><p style="font-size:15.5px;line-height:1.6;color:#4B5565;margin:10px 0 0">If a report needs a glossary, we rewrite it. You should know exactly what you paid for and what it did.</p></div>
+    <div style="background:#fff;border:1px solid #E3E8F0;border-radius:18px;padding:28px"><h3 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;font-size:22px;margin:0;letter-spacing:-.01em">Results, not activity.</h3><p style="font-size:15.5px;line-height:1.6;color:#4B5565;margin:10px 0 0">We measure load time, rankings, AI mentions and leads — not hours logged or tasks completed.</p></div>
+    <div style="background:#fff;border:1px solid #E3E8F0;border-radius:18px;padding:28px"><h3 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;font-size:22px;margin:0;letter-spacing:-.01em">No lock-in.</h3><p style="font-size:15.5px;line-height:1.6;color:#4B5565;margin:10px 0 0">One-time projects stay one-time. Monthly plans are month-to-month. You keep everything we build.</p></div>
+  </div>
+</section>
+<section style="max-width:1160px;margin:0 auto;padding:clamp(56px,7vw,96px) 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px;align-items:center">
+  <div>
+    <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0B3D91">Where we work</div>
+    <h2 style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-.025em;margin:12px 0 0;text-wrap:balance">Based in Dallas–Fort Worth. Working across the US and Canada.</h2>
+    <p style="font-size:16px;line-height:1.6;color:#4B5565;margin:16px 0 0;text-wrap:pretty">Everything happens online — the audit, the calls, the reports. Whether you're in Fort Worth or Vancouver, the process is the same and the response time is one business day.</p>
+    <a href="Contact.dc.html" style="display:inline-flex;align-items:center;gap:8px;background:#0B3D91;color:#fff;font-weight:700;font-size:16px;padding:14px 22px;border-radius:12px;text-decoration:none;margin-top:28px" style-hover="background:#072B68">Get a free site audit →</a>
+  </div>
+  <div style="aspect-ratio:4/3;border:1px dashed #C7D0E0;border-radius:20px;display:grid;place-items:center;color:#8A94A6;font-weight:700;font-size:14px;background:#F6F8FB;text-align:center;padding:24px">Image placeholder — workspace, city, or map of service area</div>
+</section>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1200 };
+  componentDidMount() { this._r = () => this.setState({ w: window.innerWidth }); window.addEventListener('resize', this._r); }
+  componentWillUnmount() { window.removeEventListener('resize', this._r); }
+  renderVals() { return { padBottom: this.state.w < 900 ? '72px' : '0' }; }
+}
+</script>
+</body>
+</html>

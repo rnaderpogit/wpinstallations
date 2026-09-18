@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+
+  /*
+   * The prototype only set a focus ring on the contact inputs. Every
+   * interactive element gets one here, keyboard-only so mouse users are
+   * unaffected.
+   */
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-brand;
+  }
+
+  /* Anchor targets clear the 72px sticky header. */
+  [id] {
+    scroll-margin-top: 88px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Honeypot field: removed from view and from the tab order, not display:none
+     (some bots skip hidden inputs, and we want them to fill it in). */
+  .honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
